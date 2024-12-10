@@ -3,7 +3,6 @@ import bancoCentralApi from "../api/bancoCentralAPI";
 async function cambio(moeda, data, valor) {
   const conversao = await bancoCentralApi.getCotacaoMoeda(moeda, data);
   let cambio;
-  console.log("conversao", conversao);
   if (Array.isArray(conversao) && conversao.length === 0) {
     cambio = 0;
   } else {
